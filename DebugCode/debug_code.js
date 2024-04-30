@@ -5,26 +5,31 @@ let num2 = parseInt(document.getElementById('input2').value);
 // Check if inputs are valid numbers
 if (!isNaN(num1) && !isNaN(num2)) {
 // Perform the operation
-                let result = multiply(num1, num2);
-
-                // Display the result
-                displayResult(result);
+    operations(num1, num2);
+    
             } else {
                 displayResult('Please enter valid numbers');
             }
         }
 
-        function multiply(a, b) {
+        function operations(a, b) {
             // Introduce a debugger statement to pause execution
             debugger;
-
-            // Multiply the numbers
-            return a * b;
+            var sum =a+b;
+            var mul= a*b;
+            var div=a % b;
+            displayResult(sum,mul,div); 
+            
         }
 
-        function displayResult(result) {
+        function displayResult(sum,mul,div) {
             // Display the result in the paragraph element
-            const resultElement = document.getElementById('result');
-            resultElement.textContent = `The result is: ${result}`;
+            const additionElement = document.getElementById('addition');
+            const multiplicationElement = document.getElementById('multiplication');
+            const divisionElement = document.getElementById('division');
+            additionElement.textContent = `The result of addition is: ${sum}`;
+            multiplicationElement.textContent = `The result of multiplication is: ${mul}`;
+            divisionElement.textContent = `The result of division is: ${div}`;
+
         }
     
